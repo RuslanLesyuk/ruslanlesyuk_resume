@@ -7,9 +7,8 @@ services:
       - './src:/var/www/ruslanlesyuk.com/html'
 
   nginx:
-    build:
-      context: .docker/nginx    
-        ports:
+    image: nginx:latest
+    ports:
       - 80:80
     volumes:
       - './src:/var/www/ruslanlesyuk.com/html'
