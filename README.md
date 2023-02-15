@@ -46,7 +46,7 @@ cd ruslanlesyuk_resume
 ```sh
 docker-compose up -d
 ```
-### Be patient and wait a few minutes, after the end of compilation type in your browser localhost/index.php and read about me ;)
+### Be patient and wait a few minutes.
 #### Make some changes in your "hosts" file you can find him in "/etc" directory, open it with text editor(nano /etc/hosts), find there string with:
 ```sh 
 127.0.0.1		localhost 
@@ -59,6 +59,9 @@ ruslanlesyuk.com
 ```sh 
 it must look like "127.0.0.1	localhost ruslanlesyuk.com"
 ```
+
+### Type in your browser "ruslanlesyuk.com" or "localhost"  and read about me ;)
+
 `WARNING`
 ## My Docker container with nginx webserver listen on 80 port, so if you have installed webserver on your machine with default configuration, you must stop your webserver.service with command:
 ```sh
