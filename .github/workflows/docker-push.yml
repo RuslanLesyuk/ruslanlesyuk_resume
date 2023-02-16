@@ -1,5 +1,7 @@
 name: ruslan-lesyuk
-
+env:
+ APPLICATION_NAME    : "MyFlask"
+ DEPLOY_PACKAGE_NAME : "flask deploy_ver-${{ github.sha}}"
 on:
  push:
     branches:
@@ -12,6 +14,11 @@ jobs:
     steps:
     - name : Print Hello massage
       run  : echo "Hello World from Testing job"
+    - name : Execute few commands
+      run : |
+        echo "Hello massage 1"
+        echo "Hello massage 2"
+        echo "Application name: ${{ env.APPLICATION_NAME}}"
   
   
   
@@ -21,3 +28,5 @@ jobs:
     steps:
     - name: Print Hello Massage
       run : echo "Hello World from Deploy job"
+    - name: Deployment package
+      run: echo "Deploy package name is ${{ env.DEPLOY_PACKAGE_NAME}}"
