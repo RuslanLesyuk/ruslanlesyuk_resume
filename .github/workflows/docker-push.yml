@@ -19,7 +19,7 @@ jobs:
       with:
         image: owico/mysql
         tags: 1.0.${{ github.run_number }}, latest
-        registry: ${{ secrets.DOCKER_REGISTRY }}
+###        registry: ${{ secrets.DOCKER_REGISTRY }}##
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_TOKEN }}
         buildArgs: SOME_KEY=1
