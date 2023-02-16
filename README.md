@@ -1,8 +1,10 @@
-Status of last Deployment:<br>
-<img src="https://github.com/RuslanLesyuk/ruslanlesyuk_resum/workflows/ruslan-lesyuk/badge.svg?branch=master"><br>
+
 
 ## Ruslan Lesyuk Resume
 ### _Just a site with my resume_
+
+![Build Status](https://github.com/RuslanLesyuk/ruslanlesyuk_resume/actions/workflows/ruslan-lesyuk/badge.svg)
+
 
 Maked with PHP/HTML/CSS
 
