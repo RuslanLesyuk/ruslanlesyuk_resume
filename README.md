@@ -3,7 +3,7 @@
 ## Ruslan Lesyuk Resume
 ### _Just a site with my resume_
 
-![Build Status](https://github.com/RuslanLesyuk/ruslanlesyuk_resume/actions/workflows/ruslan-lesyuk/badge.svg)
+![Build Status](https://github.com/RuslanLesyuk/ruslanlesyuk_resume/actions/workflows/docker-push.yml/badge.svg)
 
 
 Maked with PHP/HTML/CSS
