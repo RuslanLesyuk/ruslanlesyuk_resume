@@ -16,6 +16,7 @@ jobs:
   
   
   my_deploy:
+    needs: [my_testing]
     runs-on: ubuntu-latest
     steps:
     - name: Print Hello Massage
