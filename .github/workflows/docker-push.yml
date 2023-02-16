@@ -19,10 +19,20 @@ jobs:
         echo "Hello massage 1"
         echo "Hello massage 2"
         echo "Application name: ${{ env.APPLICATION_NAME}}"
+         
+    - name: Git clone my repo
+      uses: action/checkout@v1
+    
     - name: List current folder
       run : ls -la
-  
-  
+    
+    - name: Lets test some packages if they are here 1
+      run : aws --version
+      
+    - name: Lets test some packages if they are here 2
+      run : zip
+      
+      
   my_deploy:
     needs: [my_testing]
     runs-on: ubuntu-latest
