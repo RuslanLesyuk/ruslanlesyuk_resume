@@ -1,3 +1,0 @@
-- name: run playbook
-    run: |
-      ansible-playbook -i inventory ansible/playbook.yaml
