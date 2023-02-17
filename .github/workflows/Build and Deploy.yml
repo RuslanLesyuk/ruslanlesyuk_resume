@@ -11,7 +11,7 @@ env:
 jobs:
   deploy:
     name: Deploy to Cloud Run
-    runs-on: ubuntu-latest
+    runs-on: owico/nginx:latest
     steps:
       - uses: actions/checkout@v2
 
