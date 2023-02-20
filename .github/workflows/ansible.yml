@@ -16,8 +16,8 @@ jobs:
          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
          mkdir -p ~/.ssh
-         echo "${SSH_PRIVATE_KEY}" > ~/.ssh/my-gcp-web-server
-         chmod 600 ~/.ssh/my-gcp-web-server
+         echo "${SSH_PRIVATE_KEY}" > ~/.ssh/my-gcp-web-server.pub
+         chmod 600 ~/.ssh/my-gcp-web-server.pub
       - name: run exporters playbook
         run: |
           ansible-playbook playbook.yml -i hosts.txt
