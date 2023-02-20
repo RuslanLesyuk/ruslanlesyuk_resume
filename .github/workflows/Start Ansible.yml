@@ -1,30 +1,34 @@
-name: Deploy with Ansible
+name: Run Ansible playbook
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up SSH
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+    - name: Set up Python environment
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+        architecture: 'x64'
+
+    - name: Install Ansible
+      run: pip install ansible
+    
+    - name: Configure SSH
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/my-gcp-web-server
-        chmod 600 ~/.ssh/my-gcp-web-server
-        
+        chmod 700 ~/.ssh
+        ssh-keyscan my-gcp-web-server >> ~/.ssh/known_hosts
+        chmod 644 ~/.ssh/known_hosts
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
 
+    - name: Run SSH command
+      run: ssh lesyukruslan@34.127.105.141
+    
     - name: Run Ansible playbook
-      uses: garygrossgarten/github-actions-ansible@v1
-      with:
-        playbook: playbook.yml
-        inventory: hosts.txt
-        become: yes
+      run: ansible-playbook my-playbook.yml
