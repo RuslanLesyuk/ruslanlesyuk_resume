@@ -19,7 +19,7 @@ jobs:
       run: pip install ansible
 
     - name: Run Ansible playbook
-      run: sudo chmod 400 /home/wic/.ssh/my-gcp-web-server \ 
+      run: sudo chmod 400 /home/lesyukruslan/.ssh/my-gcp-web-server \ 
            ansible-playbook playbook.yml
       env:
         ANSIBLE_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
