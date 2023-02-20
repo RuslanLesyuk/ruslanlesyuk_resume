@@ -18,9 +18,13 @@ jobs:
         run: |
           mkdir .ssh
           touch .ssh/my-gcp-web-server
+          touch .ssh/my-gcp-web-server.pub
           echo "$SSH_PRIVATE_KEY" > .ssh/my-gcp-web-server
+          echo "$SSH_PRIVATE_KEY_PUB" > .ssh/my-gcp-web-server.pub
           cat .ssh/my-gcp-web-server
+          cat .ssh/my-gcp-web-server.pub
           chmod 600 .ssh/my-gcp-web-server
+          chmod 600 .ssh/my-gcp-web-server.pub
       - name: run exporters playbook
         run: |
           ansible-playbook playbook.yml -i hosts.txt
