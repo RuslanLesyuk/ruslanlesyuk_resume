@@ -1,29 +1,27 @@
+---
 name: Ansible deploy
-
-on: [push]
-
+on:
+  - push
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.7
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install ansible==2.9.2 requests
-    - name: set ansible config secrets
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      run: |
-        mkdir .ssh
-        echo "$SSH_PRIVATE_KEY" > .ssh/my-gcp-web-server
-        chmod 600 .ssh/my-gcp-web-server
-    - name: run exporters playbook
-      run: |
-        ansible-playbook playbook.yml -i hosts.txt
+      - uses: actions/checkout@v1
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install ansible==2.9.2 requests
+      - name: set ansible config secrets
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir .ssh
+          echo "$SSH_PRIVATE_KEY" > .ssh/my-gcp-web-server
+          chmod 600 .ssh/my-gcp-web-server
+      - name: run exporters playbook
+        run: |
+          ansible-playbook playbook.yml -i hosts.txt
