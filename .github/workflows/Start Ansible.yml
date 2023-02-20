@@ -14,7 +14,12 @@ jobs:
       with:
         python-version: '3.x'
         architecture: 'x64'
-
+    - name: Copy SSH to GitHub Action
+      uses: actions/upload-artifact@v2
+      with:
+        name: ssh
+        path: ~.ssh/my-gcp-web-server
+    
     - name: Install Ansible
       run: pip install ansible
 
