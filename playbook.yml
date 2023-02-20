@@ -1,22 +1,23 @@
+
 ---
 - name: Install Git
   hosts: all
   gather_facts: no
   become: yes
   tasks:
-    - name: Install Git
-      apt: name=git state=latest
-    - name: Clone a github repository
-      git:
-        repo: https://github.com/RuslanLesyuk/ruslanlesyuk_resume.git
-        dest: /home/lesyukruslan/ruslanlesyuk_resume
-        clone: yes
-        update: yes
-    - name: deploy Docker Compose stack
-      community.docker.docker_compose:
-        project_src: /home/lesyukruslan/ruslanlesyuk_resume
-        files:
-        - docker-compose.yml
+  - name: Install Git
+    apt: name=git state=latest
+  - name: Clone a github repository
+    git:
+      repo: https://github.com/RuslanLesyuk/ruslanlesyuk_resume.git
+      dest: /home/lesyukruslan/ruslanlesyuk_resume
+      clone: yes
+      update: yes
+  - name: deploy Docker Compose stack
+    community.docker.docker_compose:
+      project_src: /home/lesyukruslan/ruslanlesyuk_resume
+      files:
+      - docker-compose.yml
 
 
 
