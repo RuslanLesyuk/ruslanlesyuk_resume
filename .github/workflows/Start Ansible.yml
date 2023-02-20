@@ -1,34 +1,29 @@
-name: Run Ansible playbook
+name: Ansible deploy
 
 on: [push]
 
 jobs:
-  deploy:
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Python environment
-      uses: actions/setup-python@v2
+    - uses: actions/checkout@v1
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
       with:
-        python-version: '3.x'
-        architecture: 'x64'
-
-    - name: Install Ansible
-      run: pip install ansible
-    
-    - name: Configure SSH
+        python-version: 3.7
+    - name: Install dependencies
       run: |
-        mkdir -p ~/.ssh
-        chmod 700 ~/.ssh
-        ssh-keyscan lesyukruslan >> ~/.ssh/known_hosts
-        chmod 644 ~/.ssh/known_hosts
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-        chmod 600 ~/.ssh/id_ed25519
-
-    - name: Run SSH command
-      run: ssh lesyukruslan@34.127.105.141
-    
-    - name: Run Ansible playbook
-      run: ansible-playbook my-playbook.yml
+        python -m pip install --upgrade pip
+        pip install ansible==2.9.2 requests
+    - name: set ansible config secrets
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: |
+        mkdir .ssh
+        echo "$SSH_PRIVATE_KEY" > .ssh/my-gcp-web-server
+        chmod 600 .ssh/my-gcp-web-server
+    - name: run exporters playbook
+      run: |
+        ansible-playbook playbook.yml -i inventory hosts.txt
