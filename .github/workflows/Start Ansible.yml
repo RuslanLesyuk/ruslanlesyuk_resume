@@ -16,17 +16,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install ansible==2.9.2 requests
       
-      - name: Build and Run
-      - uses: actions/checkout@v2
-      - name: Set up Docker Compose
-        uses: docker/compose-action@v2
-        with:
-          compose-version: 2.0.0
-      
-      
-      
-      
-      
       - name: set ansible config secrets
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
