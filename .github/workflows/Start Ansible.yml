@@ -27,6 +27,13 @@ jobs:
         run: |
          sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
          sudo chmod +x /usr/local/bin/docker-compose
+      
+      - name: Start Docker Compose services
+         community.docker.docker_compose:
+         project_src: ./docker-compose.yml
+         state: started
+      
+      
       - name: set ansible config secrets
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
