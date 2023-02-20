@@ -11,6 +11,14 @@ jobs:
 
       - name: Install dependencies
         run: sudo apt-get update && sudo apt-get install -y ansible
-
-      - name: Run playbook
-        run: ansible-playbook playbook.yml
+      - name: set ansible config secrets
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir .ssh
+          echo "$SSH_PRIVATE_KEY" > .ssh/my-gcp-web-server
+          chmod 600 .ssh/my-gcp-web-server
+      - name: run exporters playbook
+        run: |
+          ansible-playbook playbook.yml -i hosts.txt
+      
