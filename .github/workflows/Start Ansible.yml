@@ -18,13 +18,8 @@ jobs:
     - name: Install Ansible
       run: pip install ansible
 
-    - name: Run chmod
-      run: sudo chmod 400 /home/lesyukruslan/.ssh/my-gcp-web-server
-      
-    - name: Run chmod2
-      run: sudo chmod 400 /home/lesyukruslan/.ssh/my-gcp-web-server.pub
-     
+        
     - name: Run Ansible playbook
-      run: ansible-playbook playbook.yml
+      run: ansible-playbook playbook.yml -i hosts.txt
       env:
         ANSIBLE_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
