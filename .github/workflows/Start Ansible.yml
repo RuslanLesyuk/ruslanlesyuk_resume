@@ -20,6 +20,6 @@ jobs:
 
         
     - name: Run Ansible playbook
-      run: ansible-playbook playbook.yml -i hosts.txt
+      run: ansible-playbook playbook.yml
       env:
         ANSIBLE_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
