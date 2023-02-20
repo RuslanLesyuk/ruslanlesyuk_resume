@@ -12,11 +12,11 @@
         dest: /home/lesyukruslan/ruslanlesyuk_resume
         clone: yes
         update: yes
-        
     - name: deploy Docker Compose stack
       community.docker.docker_compose:
         project_src: /home/lesyukruslan/ruslanlesyuk_resume
         files:
         - docker-compose.yml
+
 
 
