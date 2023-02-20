@@ -1,8 +1,9 @@
+---
 - name: Play Ansible Playbook
   uses: arillso/action.playbook@master
-  with:
+    with:
     playbook: playbook.yml
     inventory: hosts.txt
-  env:
-    ANSIBLE_HOST_KEY_CHECKING: 'false'
-    ANSIBLE_DEPRECATION_WARNINGS: 'false'
+    env:
+       ANSIBLE_HOST_KEY_CHECKING: "false"
+       ANSIBLE_DEPRECATION_WARNINGS: "false"
