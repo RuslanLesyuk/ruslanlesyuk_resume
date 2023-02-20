@@ -17,11 +17,10 @@ jobs:
           SSH_PRIVATE_KEY_PUB: ${{ secrets.SSH_PRIVATE_KEY_PUB }}
         run: |
           mkdir .ssh
-          ssh-keygen -t rsa -f /home/runner/.ssh/my-gcp-web-server -C lesyukruslan
+          touch /home/runner/.ssh/my-gcp-web-server
           echo "$SSH_PRIVATE_KEY" > /home/runner/.ssh/my-gcp-web-server
-          echo "$SSH_PRIVATE_KEY_PUB" > /home/runner/.ssh/my-gcp-web-server.pub
+          cat /home/runner/.ssh/my-gcp-web-server
           chmod 600 /home/runner/.ssh/my-gcp-web-server
-          chmod 600 /home/runner/.ssh/my-gcp-web-server.pub
       - name: run exporters playbook
         run: |
           ansible-playbook playbook.yml -i hosts.txt
