@@ -17,10 +17,10 @@ jobs:
           SSH_PRIVATE_KEY_PUB: ${{ secrets.SSH_PRIVATE_KEY_PUB }}
         run: |
           mkdir .ssh
-          touch /home/runner/.ssh/my-gcp-web-server
-          echo "$SSH_PRIVATE_KEY" > /home/runner/.ssh/my-gcp-web-server
-          cat /home/runner/.ssh/my-gcp-web-server
-          chmod 600 /home/runner/.ssh/my-gcp-web-server
+          touch .ssh/my-gcp-web-server
+          echo "$SSH_PRIVATE_KEY" > .ssh/my-gcp-web-server
+          cat .ssh/my-gcp-web-server
+          chmod 600 .ssh/my-gcp-web-server
       - name: run exporters playbook
         run: |
           ansible-playbook playbook.yml -i hosts.txt
