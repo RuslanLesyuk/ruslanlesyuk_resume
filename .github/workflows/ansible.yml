@@ -17,7 +17,7 @@ jobs:
         run: |
           mkdir .ssh
           ssh-keygen -t rsa -f ~/.ssh/my-gcp-web-server -C lesyukruslan
-          sudo chmod 400 ~/.ssh/my-gcp-web-server my-gcp-web-server.pub 
+          sudo chmod 400 ~/.ssh/my-gcp-web-server
       - name: run exporters playbook
         run: |
           ansible-playbook playbook.yml -i hosts.txt
