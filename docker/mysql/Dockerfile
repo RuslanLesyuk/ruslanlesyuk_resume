@@ -1,4 +1,4 @@
-FROM mysql:8
+FROM owico/mysql
 
 
 COPY EXP_Dump.sql /docker-entrypoint-initdb.d
