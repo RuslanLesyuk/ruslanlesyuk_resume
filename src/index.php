@@ -210,8 +210,6 @@ echo "0 results";
 mysqli_close($conn);  
 ?> </h5>
     </div>
-    </div>
-    
   
   </div>
   </div>

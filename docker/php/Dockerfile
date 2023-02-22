@@ -1,3 +1,3 @@
-FROM owico/php8.1-fpm
+FROM owico/php
 
 RUN docker-php-ext-install mysqli
