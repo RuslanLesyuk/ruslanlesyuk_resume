@@ -210,20 +210,6 @@ echo "0 results";
 mysqli_close($conn);  
 ?> </h5>
     </div>
-<h5><?php
-    $sql = 'SELECT description FROM Terraform';
-$retval=mysqli_query($conn, $sql);  
-  
-if(mysqli_num_rows($retval) > 0){  
- while($row = mysqli_fetch_assoc($retval)){  
-    echo "{$row['description']}";  
-
- } //end of while  
-}else{  
-echo "0 results";  
-}  
-mysqli_close($conn);  
-?> </h5>
     </div>
     
   
