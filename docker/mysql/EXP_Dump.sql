@@ -44,6 +44,29 @@ INSERT INTO `Ansible` VALUES ('Ansible(Basic)');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Ansible`
+--
+
+
+DROP TABLE IF EXISTS `Terraform`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Terraform` (
+  `description` varchar(80) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Ansible`
+--
+
+LOCK TABLES `Terraform` WRITE;
+/*!40000 ALTER TABLE `Ansible` DISABLE KEYS */;
+INSERT INTO `Terraform` VALUES ('Terraform (basics: create basic staff like – VPC EC2, Route53, SG, etc..).');
+/*!40000 ALTER TABLE `Ansible` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `CSS`
 --
 
