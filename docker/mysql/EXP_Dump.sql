@@ -44,7 +44,7 @@ INSERT INTO `Ansible` VALUES ('Ansible(Basic)');
 UNLOCK TABLES;
 
 --
--- Table structure for table `Ansible`
+-- Table structure for `Terraform`
 --
 
 
@@ -57,13 +57,13 @@ CREATE TABLE `Terraform` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Ansible`
+-- Dumping data for table `Terraform`
 --
 
 LOCK TABLES `Terraform` WRITE;
-/*!40000 ALTER TABLE `Ansible` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Terraform` DISABLE KEYS */;
 INSERT INTO `Terraform` VALUES ('Terraform (basics: create basic staff like – VPC EC2, Route53, SG, etc..).');
-/*!40000 ALTER TABLE `Ansible` ENABLE KEYS */;
+/*!40000 ALTER TABLE `Terraform` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
