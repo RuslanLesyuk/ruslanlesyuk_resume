@@ -162,20 +162,6 @@ echo "0 results";
 }  
   
 ?></h5>
-<h5><?php
-    $sql = 'SELECT description FROM Terraform';  
-$retval=mysqli_query($conn, $sql);  
-  
-if(mysqli_num_rows($retval) > 0){  
- while($row = mysqli_fetch_assoc($retval)){  
-    echo "{$row['description']}";  
-           
- } //end of while  
-}else{  
-echo "0 results";  
-}  
-  
-?></h5>
     <h5><?php
     $sql = 'SELECT description FROM MySQL';  
 $retval=mysqli_query($conn, $sql);  
@@ -247,6 +233,7 @@ echo "0 results";
 mysqli_close($conn);  
 ?> </h5>
 <h5>Kubernetes (basics: GKE, operate with deployments, statefull/stateless apps, ingress)</h5>
+<h5>Terraform (basics: create basic staff like – VPC EC2, Route53, SG, etc..).</h5>
 
 
 
