@@ -102,10 +102,31 @@ if(!$conn){
       <h2 class="title2">Last Experience</h2>
     <div class="box">
       <div class="year_company">
-    <h5><pre>Project:         IT School “ITEA”<pre></h5>
-    <h5><pre>Company:         “ITEA”.<pre></h5>
-    <h5><pre>Involvement:     6 month.<pre></h5>
-
+    <h5><pre>Project:               IT School “ITEA”<pre></h5>
+    <h5><pre>Company:        “ITEA”.<pre></h5>
+    <h5><pre>Involvement:  6 month.<pre></h5>
+    
+    <br><h5><pre>Project:             Automated Deployment of WordPress apps on AWS Cloud<pre></h5>
+    <h5><pre>Description:  AWS Cloud
+                               Ansible
+                               Terraform
+                               Docker/docker-compose
+                               RDS (MySQL 8.0) 
+                               S3 buckets
+                               Networks (VPC, routing, security, ALB) 
+                               Ansible
+                               Terraform
+                               Docker/docker-compose
+                               RDS (MySQL 8.0)
+                               S3 buckets
+                               Networks (VPC, routing, security, ALB)</h5>
+    <h5><pre>Project code:  <a href = "https://github.com/RuslanLesyuk/WordPress_AWS_RDS_Application">GitHub</a></h5>
+    <br><h5><pre>Project:             Self written public CV<pre></h5>
+    <h5><pre>Description:  Docker/docker-compose
+                               MySQL 8.0
+                               PHP 8 /HTML/CSS
+                               Github/Github actions</h5>
+    <h5><pre>Project code:  <a href = "https://github.com/RuslanLesyuk/ruslanlesyuk_resume">GitHub</a></h5>
     </div>
 </div>
 </div>
@@ -129,6 +150,20 @@ echo "0 results";
 ?></h5>
     <h5><?php
     $sql = 'SELECT description FROM GitHub';  
+$retval=mysqli_query($conn, $sql);  
+  
+if(mysqli_num_rows($retval) > 0){  
+ while($row = mysqli_fetch_assoc($retval)){  
+    echo "{$row['description']}";  
+           
+ } //end of while  
+}else{  
+echo "0 results";  
+}  
+  
+?></h5>
+<h5><?php
+    $sql = 'SELECT description FROM Terraform';  
 $retval=mysqli_query($conn, $sql);  
   
 if(mysqli_num_rows($retval) > 0){  
@@ -168,7 +203,7 @@ if(mysqli_num_rows($retval) > 0){
 echo "0 results";  
 }  
   
-?></h5>
+?>(good knowledge: deploy services and configure Linux)</h5>
     <h5><?php
     $sql = 'SELECT description FROM Linux';  
 $retval=mysqli_query($conn, $sql);  
@@ -196,8 +231,8 @@ if(mysqli_num_rows($retval) > 0){
 echo "0 results";  
 }  
   
-?></h5>
-    <h5><?php
+?>
+<h5><?php
     $sql = 'SELECT description FROM CSS';  
 $retval=mysqli_query($conn, $sql);  
   
@@ -211,6 +246,10 @@ echo "0 results";
 }  
 mysqli_close($conn);  
 ?> </h5>
+<h5>Kubernetes (basics: GKE, operate with deployments, statefull/stateless apps, ingress)</h5>
+
+
+
     </div>
   
   </div>
