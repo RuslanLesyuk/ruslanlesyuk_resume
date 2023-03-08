@@ -102,9 +102,9 @@ if(!$conn){
       <h2 class="title2">Last Experience</h2>
     <div class="box">
       <div class="year_company">
-    <h5><pre>Project:     IT School “ITEA”<pre></h5>
-    <h5><pre>Company:     “ITEA”.<pre></h5>
-    <h5><pre>Involvement: 6 month.</h5>
+    <h5><pre>Project:         IT School “ITEA”<pre></h5>
+    <h5><pre>Company:         “ITEA”.<pre></h5>
+    <h5><pre>Involvement:     6 month.<pre></h5>
 
     </div>
 </div>
