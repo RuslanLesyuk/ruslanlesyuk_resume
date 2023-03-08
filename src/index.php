@@ -99,11 +99,13 @@ if(!$conn){
     </div>
     
     <div class="about">
-      <h2 class="title2">Experience</h2>
+      <h2 class="title2">Last Experience</h2>
     <div class="box">
       <div class="year_company">
-    <h5>2023 - </h5>
-    <h5>Company Name</h5>
+    <h5>Project:IT School “ITEA”</h5>
+    <h5>Company:“ITEA”.</h5>
+    <h5>Involvement:6 month.</h5>
+    
     </div>
 </div>
 </div>
